@@ -1,0 +1,424 @@
+/*
+Theme Name: block70
+Theme URI:
+
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Text Domain: block70
+
+Tags:
+
+Version: 2026.07.30.0720
+
+*/
+
+/* root layout */
+
+html {
+	scroll-behavior: smooth;
+}
+
+
+/* scroll-top */
+.scroll-top-container {
+    position: fixed;
+    left: 50%;
+    bottom: 1rem;
+    width: var(--wp--style--global--wide-size);
+    max-width: calc(100vw - 2rem);
+    transform: translateX(-50%);
+
+    display: flex;
+    justify-content: flex-end;
+
+    pointer-events: none;
+    z-index: 999;
+}
+
+.scroll-top-container svg {
+	fill: var(--wp--preset--color--dark);
+}
+
+.scroll-top-container .scroll-top-button {
+	display: none;
+}
+
+.scroll-top-container .is-visible {
+	display: block;
+}
+
+.scroll-top-button {
+    pointer-events: auto;
+}
+
+
+/* headings */
+
+h2 {
+	color: var(--wp--preset--color--keycolor);
+}
+
+h3::after {
+	content: "";
+	display: block;
+	width: 5rem;
+	height: 0.25rem;
+	background-color: var(--wp--preset--color--keycolor);
+	margin-top: 0.5rem;
+}
+
+h4 {
+	color: var(--wp--preset--color--medium);
+}
+
+h5,
+h6 {
+	color: var(--wp--preset--color--dark);
+}
+
+
+/* header */
+
+#header * {
+	font-family: var(--wp--preset--font-family--league-spartan);
+}
+
+/* Search - Standard: ausblenden */
+#header #search {
+	display: none;
+}
+
+/* Search - Ab 80rem (≈1280px bei 16px Root-Schriftgröße) einblenden */
+@media (min-width: 80rem) {
+	#header #search {
+		display: block;
+	}
+}
+
+#header .wp-block-search__input {
+	color: var(--wp--preset--color--white);
+
+	background: transparent;
+
+	background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cg%20transform%3D%22translate(24%200)%20scale(-1%201)%22%3E%3Cpath%20fill%3D%22white%22%20d%3D%22M10.0944%2016.3199%204.707%2021.707c-.3905.3905-1.0237.3905-1.4142%200-.3905-.3905-.3905-1.0237%200-1.4142L8.68%2014.9056C7.6271%2013.551%207%2011.8487%207%2010c0-4.4183%203.5817-8%208-8s8%203.5817%208%208-3.5817%208-8%208c-1.8487%200-3.551-.627-4.9056-1.6801zM15%2016c3.3137%200%206-2.6863%206-6s-2.6863-6-6-6-6%202.6863-6%206%202.6863%206%206%206z%22/%3E%3C/g%3E%3C/svg%3E');
+	background-repeat: no-repeat;
+	background-position: .75rem center;
+	background-size: 1rem;
+	padding-left: 2.625rem;
+
+	border-radius: 0.3125rem;
+	border: 1px solid var(--wp--preset--color--white);
+
+	width: 17.5rem;
+}
+
+#header .wp-block-search__input:focus {
+	outline: none;
+	box-shadow: none;
+}
+
+#header .wp-block-search__input::placeholder {
+	color: var(--wp--preset--color--white);
+}
+
+#header .wp-block-search__input::-webkit-search-cancel-button {
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+
+/* navigation */
+
+#header .wp-block-navigation__responsive-container-open svg {
+	display: none;
+}
+
+#header .wp-block-navigation__responsive-container-open::before {
+	content: "";
+	display: block;
+	width: 2rem;
+	height: 1rem;
+	margin-left: 2rem;
+
+	background-image: url("data:image/svg+xml,%3Csvg%20id%3D%22Ebene_1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20version%3D%221.1%22%20viewBox%3D%220%200%2026.2%2014.7%22%3E%3Cdefs%3E%3Cstyle%3E.st0%7Bfill%3A%23fff%3B%7D%3C/style%3E%3C/defs%3E%3Cpath%20class%3D%22st0%22%20d%3D%22M14.4%2C2.6h11c.4%2C0%2C.8-.3.8-.8s-.3-.8-.8-.8h-11c-.4%2C0-.8.3-.8.8s.3.8.8.8Z%22/%3E%3Cpath%20class%3D%22st0%22%20d%3D%22M25.4%2C5.3h-11c-.4%2C0-.8.3-.8.8s.3.8.8.8h11c.4%2C0%20.8-.3.8-.8s-.3-.8-.8-.8Z%22/%3E%3Cpath%20class%3D%22st0%22%20d%3D%22M25.4%2C9.6h-8.2c-.4%2C0-.8.3-.8.8s.3.8.8.8h8.2c.4%2C0%20.8-.3.8-.8s-.3-.8-.8-.8Z%22/%3E%3Cpath%20class%3D%22st0%22%20d%3D%22M10.3%2C9.2c1.7-2.3%201.6-5.5-.5-7.5C7.6-.6%2C3.9-.6%2C1.7%2C1.7S0%2C4.2%2C0%2C5.7s.6%2C3%2C1.7%2C4.1c1.1%2C1.1%202.6%2C1.7%204.1%2C1.7s2.5-.4%203.5-1.2l4.2%2C4.2c.1.1.3.2.5.2s.4%2C0%20.5-.2c.3-.3.3-.8%200-1.1l-4.2-4.2ZM2.7%2C8.8c-.8-.8-1.2-1.9-1.2-3s.4-2.2%201.2-3c.8-.8%201.9-1.2%203-1.2s2.2.4%203%201.2c1.7%201.7%201.7%204.4%200%206-1.7%201.7-4.4%201.7-6%200Z%22/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+#header .wp-block-navigation__responsive-container-open::after {
+	content: "MENU";
+	padding-left: 0.25rem;
+	font-size: 1rem;
+	line-height: 1rem;
+	font-weight: 700;
+}
+
+
+#header .wp-block-navigation__responsive-container-close {
+	display: flex;
+	padding-top: .75rem;
+}
+
+#header .wp-block-navigation__responsive-container-close svg {
+	display: none;
+}
+
+#header .wp-block-navigation__responsive-container-close::before {
+	content: "";
+	display: block;
+	width: 1rem;
+	height: 1rem;
+
+	background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20height%3D%2224%22%20aria-hidden%3D%22true%22%20focusable%3D%22false%22%3E%3Cpath%20fill%3D%22white%22%20d%3D%22m13.06%2012%206.47-6.47-1.06-1.06L12%2010.94%205.53%204.47%204.47%205.53%2010.94%2012l-6.47%206.47%201.06%201.06L12%2013.06l6.47%206.47%201.06-1.06L13.06%2012Z%22/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+#header .wp-block-navigation__responsive-container-close::after {
+	content: "SCHLIESSEN";
+	display: block;
+	padding-left: 0.25rem;
+	padding-top: 0.1rem;
+	font-size: 1rem;
+	line-height: 1rem;
+	font-weight: 700;
+}
+
+
+/* navigations-overlay */
+
+#header .wp-block-navigation__container {
+	row-gap: 0.875rem;
+	width: 100%;
+	padding: 1rem 0;
+}
+
+#header .wp-block-navigation__container>li {
+	width: 100%;
+	padding-bottom: 0.875rem;
+	border-bottom: 1px solid var(--wp--preset--color--white);
+}
+
+#header .wp-block-navigation__responsive-dialog {
+	margin-left: auto;
+	max-width: 25rem;
+	width: 100%;
+}
+
+
+
+
+/* footer */
+
+#footer * {
+	font-family: var(--wp--preset--font-family--league-spartan);
+}
+
+#footer a {
+	text-decoration: none;
+}
+
+
+/* footer-1 */
+
+#footer-1 .wp-block-navigation__container {
+	flex-direction: column;
+	align-items: start;
+	column-gap: 1rem;
+	row-gap: 1rem;
+}
+
+#footer-1 .current-menu-item>a {
+	font-weight: 700;
+}
+
+
+/* footer-2 */
+
+/* Standard: flex column */
+#footer-2 .wp-block-navigation__container {
+	flex-direction: column;
+	align-items: start;
+	column-gap: 1rem;
+	row-gap: 1rem;
+}
+
+/* Ab 40rem (≈640px bei 16px Root-Schriftgröße) */
+@media (min-width: 40rem) {
+
+	#footer-2 .wp-block-navigation__container {
+		flex-direction: row;
+		align-items: center;
+	}
+
+	#footer-2 .wp-block-navigation__container>li+li {
+		border-left: 1px solid var(--wp--preset--color--white);
+		padding-left: 1rem;
+	}
+
+}
+
+
+/* blocks */
+
+/* .wp-block-social-links */
+
+.wp-block-social-links {
+	column-gap: 0.5rem;
+}
+
+.wp-block-social-links .wp-social-link svg {
+	width: 2rem;
+	height: 2rem;
+}
+
+
+
+/* .wp-block-breadcrumbs */
+
+.wp-block-breadcrumbs {
+	font-family: var(--wp--preset--font-family--league-spartan);
+	font-size: 0.875rem;
+	color: var(--wp--preset--color--light);
+}
+
+.wp-block-breadcrumbs>ol>li>a {
+	font-family: inherit;
+	font-size: inherit;
+	text-decoration: none;
+	color: inherit;
+}
+
+.wp-block-breadcrumbs>ol>li:last-child {
+	color: var(--wp--preset--color--medium);
+}
+
+.wp-block-breadcrumbs>ol>li:first-child>a {
+	font-size: 0;
+	display: inline-flex;
+	align-items: center;
+}
+
+.wp-block-breadcrumbs>ol>li:first-child>a::before {
+	content: "";
+	display: block;
+	width: 0.875rem;
+	height: 0.875rem;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M5.25 12.8333V7H8.75V12.8333M1.75 5.25L7 1.16667L12.25 5.25V11.6667C12.25 11.9761 12.1271 12.2728 11.9083 12.4916C11.6895 12.7104 11.3928 12.8333 11.0833 12.8333H2.91667C2.60725 12.8333 2.3105 12.7104 2.09171 12.4916C1.87292 12.2728 1.75 11.9761 1.75 11.6667V5.25Z' stroke='%23E3E3E3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+
+/* .wp-block-post-featured-image */
+
+.wp-block-post-featured-image img {
+	display: block;
+	max-width: var(--wp--style--global--wide-size);
+	max-height: 60vh;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/* .wp-block-buttons / Button(s): Sprungmarke */
+
+.wp-block-buttons .is-style-sprungmarke>a:hover {
+	background-color: var(--wp--preset--color--segmentcolor);
+}
+
+
+/* .wp-block-accordion */
+
+.wp-block-accordion-item.is-open>.wp-block-accordion-heading .wp-block-accordion-heading__toggle-icon {
+	transform: none;
+}
+
+/* Standardmäßig Plus */
+.wp-block-accordion-heading__toggle-icon {
+    font-size: 1.8rem;
+	font-weight: 400;
+    line-height: 1;
+	width: 1.8rem;
+	height: 1.8rem;
+}
+
+/* Geöffnetes Akkordeon = Minus */
+.wp-block-accordion-item.is-open .wp-block-accordion-heading__toggle-icon {
+    font-size: 0;
+}
+
+.wp-block-accordion-item.is-open .wp-block-accordion-heading__toggle-icon::before {
+    content: "-";
+    font-size: 1.8rem;
+}
+
+
+
+
+/* .wp-element-caption */
+
+.wp-element-caption {
+	max-width: 66%;
+	color: var(--wp--preset--color--keycolor);
+	padding: .625rem 1.25rem;
+    font-family: var(--wp--preset--font-family--league-spartan);
+	font-weight: 700;
+	margin: 0;
+}
+
+
+/* #header Navigation */
+
+/* Menüpunkt mit Untermenü */
+#header .wp-block-navigation-item.has-child {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	align-items: center;
+}
+
+/* Link */
+#header .wp-block-navigation-item.has-child>.wp-block-navigation-item__content {
+	display: block;
+	width: 100%;
+}
+
+/* Button */
+#header .submenu-toggle {
+	background: none;
+	border: 0;
+	color: inherit;
+	font-size: 1.5rem;
+	cursor: pointer;
+	padding: 0;
+	margin-left: 1rem;
+	padding-left: 2rem;
+}
+
+/* Untermenü über beide Spalten */
+#header .wp-block-navigation-item.has-child>.wp-block-navigation__submenu-container {
+	grid-column: 1 / -1;
+	display: none;
+}
+
+#header .wp-block-navigation-item.has-child.is-open>.wp-block-navigation__submenu-container {
+	display: block;
+}
+
+
+#header .wp-block-navigation-item.is-open>.submenu-toggle {
+	padding-left: 0;
+	transform: rotate(90deg);
+}
+
+
+
+
+/* eigene Klassen */
+
+.text-shadow {
+	text-shadow: 0px .3125rem 1.25rem rgba(0, 0, 0, 0.25);
+}

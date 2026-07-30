@@ -1,0 +1,53 @@
+{
+	"$schema": "https://schemas.wp.org/wp/7.0/theme.json",
+	"version": 3,
+	"title": "Human Capital",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "keycolor",
+					"name": "keycolor",
+					"color": "#8F0000"
+				},
+				{
+					"slug": "segmentcolor",
+					"name": "segmentcolor",
+					"color": "#FF1900"
+				},
+				{
+					"slug": "dark",
+					"name": "dark",
+					"color": "#333333"
+				},
+				{
+					"color": "#9D9D9D",
+					"name": "medium",
+					"slug": "medium"
+				},
+				{
+					"slug": "light",
+					"name": "light",
+					"color": "#E3E3E3"
+				},
+				{
+					"slug": "black",
+					"name": "black",
+					"color": "#000000"
+				},
+				{
+					"slug": "white",
+					"name": "white",
+					"color": "#FFFFFF"
+				}
+			],
+			"gradients": [
+				{
+					"gradient": "linear-gradient(90deg, var(--wp--preset--color--keycolor) 0%, var(--wp--preset--color--segmentcolor) 100%)",
+					"name": "Farbverlauf",
+					"slug": "gradient"
+				}
+			]
+		}
+	}
+}
