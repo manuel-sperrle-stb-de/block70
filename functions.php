@@ -45,6 +45,14 @@ add_action('init', function () {
         ]
     );
 
+	register_block_style(
+		'core/list',
+		array(
+			'name'  => 'mitstrichen',
+			'label' => 'Mit Strichen',
+		)
+	);
+
 });
 
 

@@ -323,6 +323,13 @@
 						"bottomRight": "0.3125rem"
 					}
 				}
+			},
+			"core/list": {
+				"variations": {
+					"mitstrichen": {
+						"css": ""
+					}
+				}
 			}
 		},
 		"color": {
