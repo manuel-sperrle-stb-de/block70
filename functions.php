@@ -76,3 +76,10 @@ function enqueue_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
+
+
+# add filter to enable editor settings for all blocks
+add_filter( 'block_editor_settings_all', function ( $settings ) {
+    $settings['disableContentOnlyForUnsyncedPatterns'] = true;
+    return $settings;
+} );
